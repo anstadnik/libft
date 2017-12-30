@@ -6,7 +6,7 @@
 /*   By: astadnik <astadnik@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/23 15:23:50 by astadnik          #+#    #+#             */
-/*   Updated: 2017/12/25 14:01:15 by astadnik         ###   ########.fr       */
+/*   Updated: 2017/12/30 13:03:27 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,6 @@
 */
 
 #include "libft.h"
-
-static void	d(void *ptr, size_t size)
-{
-	if (size)
-		free(ptr);
-}
 
 void		ft_lstdelnode(t_list **head, t_list *targ)
 {
@@ -33,7 +27,7 @@ void		ft_lstdelnode(t_list **head, t_list *targ)
 	if (*head == targ)
 	{
 		*head = targ->next;
-		ft_lstdelone(&targ, d);
+		ft_lstdelone(&targ, &free);
 		return ;
 	}
 	while (*head)
@@ -41,7 +35,7 @@ void		ft_lstdelnode(t_list **head, t_list *targ)
 		if ((*head)->next == targ)
 		{
 			(*head)->next = targ->next;
-			ft_lstdelone(&targ, d);
+			ft_lstdelone(&targ, &free);
 			return ;
 		}
 		head = &(*head)->next;

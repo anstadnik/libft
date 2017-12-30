@@ -6,7 +6,7 @@
 /*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/05 15:26:05 by astadnik          #+#    #+#             */
-/*   Updated: 2017/11/09 13:13:39 by astadnik         ###   ########.fr       */
+/*   Updated: 2017/12/30 13:02:17 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 #include "libft.h"
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+void	ft_lstdel(t_list **alst, void (*del)(void *))
 {
 	if (!alst || !*alst || !del)
 		return ;

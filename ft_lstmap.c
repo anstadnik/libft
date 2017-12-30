@@ -6,7 +6,7 @@
 /*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/05 15:38:59 by astadnik          #+#    #+#             */
-/*   Updated: 2017/12/23 15:19:23 by astadnik         ###   ########.fr       */
+/*   Updated: 2017/12/30 13:03:01 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,6 @@
 ** applications of f. If the allocation fails, the function
 ** returns NULL.
 */
-
-static void	r(void *ptr, size_t size)
-{
-	if (size)
-		free(ptr);
-}
 
 t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
@@ -37,7 +31,7 @@ t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	{
 		if (!(temp = f(lst)))
 		{
-			ft_lstdel(&rez, &r);
+			ft_lstdel(&rez, &free);
 			return (NULL);
 		}
 		ft_lstaddb(&rez, temp);
