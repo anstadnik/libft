@@ -6,7 +6,7 @@
 /*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/25 14:05:43 by astadnik          #+#    #+#             */
-/*   Updated: 2017/11/09 13:14:15 by astadnik         ###   ########.fr       */
+/*   Updated: 2017/12/23 15:11:29 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,5 @@ void	ft_putstr(char const *str)
 {
 	if (!str)
 		return ;
-	while (*str)
-		ft_putchar(*str++);
+	write(1, str, ft_strlen(str));
 }

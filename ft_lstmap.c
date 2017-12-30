@@ -6,7 +6,7 @@
 /*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/05 15:38:59 by astadnik          #+#    #+#             */
-/*   Updated: 2017/11/09 13:13:52 by astadnik         ###   ########.fr       */
+/*   Updated: 2017/12/23 15:19:23 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	t_list	*temp;
 
 	rez = NULL;
+	if (!f)
+		return (NULL);
 	while (lst)
 	{
 		if (!(temp = f(lst)))

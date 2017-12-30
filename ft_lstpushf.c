@@ -6,7 +6,7 @@
 /*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/07 14:39:23 by astadnik          #+#    #+#             */
-/*   Updated: 2017/11/09 13:12:57 by astadnik         ###   ########.fr       */
+/*   Updated: 2017/12/30 12:55:45 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	ft_lstpushf(t_list **alst, void *content, size_t content_size)
 	t_list	*rez;
 
 	rez = ft_lstnew(content, content_size);
-	if (!alst)
+	if (!alst || !rez)
 		return ;
 	if (*alst)
 		rez->next = (*alst);

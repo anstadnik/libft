@@ -6,7 +6,7 @@
 /*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 18:47:48 by astadnik          #+#    #+#             */
-/*   Updated: 2017/11/09 13:14:35 by astadnik         ###   ########.fr       */
+/*   Updated: 2017/12/23 15:50:16 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	f(char ***arr, size_t i)
 	free(*arr);
 }
 
-char static	**fill(char const *s, char c, size_t am, char **rez)
+static char	**fill(char const *s, char c, size_t am, char **rez)
 {
 	size_t	i;
 	char	*beg;

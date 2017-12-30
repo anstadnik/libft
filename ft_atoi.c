@@ -6,7 +6,7 @@
 /*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/28 14:26:43 by astadnik          #+#    #+#             */
-/*   Updated: 2017/11/09 13:14:02 by astadnik         ###   ########.fr       */
+/*   Updated: 2017/12/30 12:45:46 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_atoi(const char *s)
 
 	rez = 0;
 	neg = 0;
-	while (ft_isspace(*s))
+	while (ft_iswhitespace(*s))
 		s++;
 	if (*s == '-' || *s == '+')
 		if (*s++ == '-')

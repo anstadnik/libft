@@ -6,7 +6,7 @@
 /*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/29 18:35:10 by astadnik          #+#    #+#             */
-/*   Updated: 2017/11/12 15:35:55 by astadnik         ###   ########.fr       */
+/*   Updated: 2017/12/30 12:34:11 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef	struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+void				*ft_realloc(void *ptr, size_t size_src, size_t size);
 void				ft_lstaddb(t_list **head, t_list *list);
 void				ft_lstadd(t_list **alst, t_list *elem);
 void				ft_lstpushb(t_list **list, void *content,
@@ -35,6 +36,7 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 t_list				*ft_lstgetlast(t_list *head);
 void				ft_lstpushf(t_list **alst, void *content,
 		size_t content_size);
+void				ft_lstdelnode(t_list **head, t_list *targ);
 void				ft_putchar(char c);
 void				ft_putstr(char const *str);
 void				ft_putendl(char const *str);
