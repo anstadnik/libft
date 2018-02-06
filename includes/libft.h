@@ -6,7 +6,7 @@
 /*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/29 18:35:10 by astadnik          #+#    #+#             */
-/*   Updated: 2018/02/02 17:02:19 by astadnik         ###   ########.fr       */
+/*   Updated: 2018/02/02 18:25:45 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ t_list				*ft_lstgetlast(t_list *head);
 void				ft_lstpushf(t_list **alst, void *content,
 		size_t content_size);
 void				ft_lstdelnode(t_list **head, t_list *targ);
+char				*ft_lsttostr(t_list *head);
 void				ft_putchar(char c);
 void				ft_putstr(char const *str);
 void				ft_putendl(char const *str);
@@ -55,7 +56,6 @@ void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
 void				*ft_memmove(void *s1, const void *s2, size_t n);
 size_t				ft_strsrch(const char *str, char c);
-char				*ft_lsttostr(t_list *head);
 char				*ft_strrchr(const char *s, int c);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_strcat(char *s1, char *s2);
