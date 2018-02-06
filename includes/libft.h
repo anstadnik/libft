@@ -6,7 +6,7 @@
 /*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/29 18:35:10 by astadnik          #+#    #+#             */
-/*   Updated: 2017/12/30 13:02:35 by astadnik         ###   ########.fr       */
+/*   Updated: 2018/02/02 17:02:19 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ void				*ft_memcpy(void *str1, const void *str2, size_t n);
 void				*ft_memalloc(size_t size);
 void				ft_memdel(void **ap);
 void				*ft_memmove(void *s1, const void *s2, size_t n);
+size_t				ft_strsrch(const char *str, char c);
+char				*ft_lsttostr(t_list *head);
 char				*ft_strrchr(const char *s, int c);
 char				**ft_strsplit(char const *s, char c);
 char				*ft_strcat(char *s1, char *s2);
