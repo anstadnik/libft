@@ -6,7 +6,7 @@
 /*   By: astadnik <astadnik@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/02 16:49:45 by astadnik          #+#    #+#             */
-/*   Updated: 2018/02/02 17:03:16 by astadnik         ###   ########.fr       */
+/*   Updated: 2018/02/16 15:27:39 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@
 ** founded, or 0 otherwise.
 */
 
-size_t	ft_strsrch(const char *str, char c)
+ssize_t	ft_strsrch(const char *str, char c)
 {
-	size_t	rez;
+	ssize_t	rez;
 
 	if (!str)
-		return (0);
+		return (-1);
 	rez = 0;
 	while (str[rez])
 		if (str[rez] == c)
 			return (rez);
 		else
 			rez++;
-	return (0);
+	return (-1);
 }
