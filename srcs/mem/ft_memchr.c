@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstaddb.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 18:10:45 by astadnik          #+#    #+#             */
-/*   Updated: 2017/11/09 13:13:16 by astadnik         ###   ########.fr       */
+/*   Created: 2017/10/26 21:58:37 by astadnik          #+#    #+#             */
+/*   Updated: 2018/03/02 18:57:34 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Adds the element new at the end of the list.
+** Locates the first occurrence of c (converted to an unsigned char) in
+** string s.
 */
 
 #include "libft.h"
 
-void	ft_lstaddb(t_list **head, t_list *list)
+void	*ft_memchr(const void *str, int c, size_t n)
 {
-	if (!head)
-		return ;
-	while (*head)
-		head = &((*head)->next);
-	*head = list;
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+		if (((unsigned char*)str)[i++] == (unsigned char)c)
+			return ((void *)(str + i - 1));
+	return (NULL);
 }

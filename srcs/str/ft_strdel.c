@@ -1,33 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memalloc.c                                      :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/26 20:58:33 by astadnik          #+#    #+#             */
-/*   Updated: 2017/11/09 13:13:56 by astadnik         ###   ########.fr       */
+/*   Created: 2017/10/26 21:04:50 by astadnik          #+#    #+#             */
+/*   Updated: 2018/03/02 19:15:07 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Allocates (with malloc(3)) and returns a “fresh” memory
-** area. The memory allocated is initialized to 0. If the allocation
-** fails, the function returns NULL.
+** Takes as a parameter the address of a string that need to be
+** freed with free(3), then sets its pointer to NULL.
 */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+void	ft_strdel(char **str)
 {
-	char	*pt;
-
-	if (size == 0)
-		return (NULL);
-	pt = (char *)malloc(size);
-	if (!pt)
-		return (NULL);
-	while (size--)
-		*(pt + size) = 0;
-	return ((void *)pt);
+	ft_memdel((void **)str);
 }

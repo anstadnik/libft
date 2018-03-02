@@ -1,32 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_ceil.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: astadnik <astadnik@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/27 21:58:17 by astadnik          #+#    #+#             */
-/*   Updated: 2017/11/09 13:14:42 by astadnik         ###   ########.fr       */
+/*   Created: 2018/03/02 20:11:16 by astadnik          #+#    #+#             */
+/*   Updated: 2018/03/02 20:13:25 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** Copy the string src to dst (including
-** the terminating `\0' character.)
-*/
-
-#include "libft.h"
-
-char	*ft_strcpy(char *s1, char const *s2)
+long long	ft_ceil(long double n)
 {
-	size_t	i;
-
-	i = 0;
-	while (1)
-	{
-		s1[i] = s2[i];
-		if (!s2[i])
-			return (s1);
-		i++;
-	}
+	if ((long long)n >= n)
+		return ((long long)n);
+	else
+		return ((long long)n + 1);
 }

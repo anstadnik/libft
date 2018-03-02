@@ -6,7 +6,7 @@
 /*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/05 15:06:48 by astadnik          #+#    #+#             */
-/*   Updated: 2017/12/30 13:01:56 by astadnik         ###   ########.fr       */
+/*   Updated: 2018/03/02 18:37:03 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,11 @@
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list **aslt, void (*del)(void *))
+void	ft_lstdelone(t_list **head, void (*del)(void *))
 {
-	if (!aslt || !*aslt || !del)
+	if (!head || !*head || !del)
 		return ;
-	del((*aslt)->content);
-	free(*aslt);
-	*aslt = NULL;
+	del((*head)->content);
+	free(*head);
+	*head = NULL;
 }

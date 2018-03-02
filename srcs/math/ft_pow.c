@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memdup.c                                        :+:      :+:    :+:   */
+/*   ft_pow.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: astadnik <astadnik@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/09 10:47:28 by astadnik          #+#    #+#             */
-/*   Updated: 2017/11/09 13:12:52 by astadnik         ###   ########.fr       */
+/*   Created: 2018/03/02 16:53:53 by astadnik          #+#    #+#             */
+/*   Updated: 2018/03/02 18:12:13 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** Allocates memory, copies there size bytes from src and returns it
-*/
-
 #include "libft.h"
 
-void	*ft_memdup(void *src, size_t size)
+long double	ft_pow(int n, int p)
 {
-	char	*rez;
+	long double	rez;
 
-	rez = malloc(size);
-	if (!rez)
-		return (NULL);
-	ft_memcpy(rez, src, size);
-	return ((void *)rez);
+	rez = 1;
+	if (!p)
+		return (1);
+	else if (p > 0)
+		while (p--)
+			rez *= n;
+	else
+		while (p++)
+			rez /= n;
+	return (rez);
 }

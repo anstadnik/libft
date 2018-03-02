@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstaddb.c                                       :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/07 14:20:09 by astadnik          #+#    #+#             */
-/*   Updated: 2017/12/30 12:55:35 by astadnik         ###   ########.fr       */
+/*   Created: 2017/10/27 22:10:25 by astadnik          #+#    #+#             */
+/*   Updated: 2018/03/02 19:13:35 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Adds a new element of t_list type at the end of the list.
+** Append a copy of the null-terminated
+** string s2 to the end of the null-terminated string s1, then add a terminat-
+** ing `\0'.  The string s1 must have sufficient space to hold the result.
 */
 
 #include "libft.h"
 
-void	ft_lstpushb(t_list **list, void *content, size_t content_size)
+char	*ft_strcat(char *s1, char *s2)
 {
-	t_list	*new;
+	size_t	i;
 
-	if (!list || !(new = ft_lstnew(content, content_size)))
-		return ;
-	while (*list)
-		list = &((*list)->next);
-	*list = new;
+	i = 0;
+	if (!s1 || !s2)
+		return (NULL);
+	while (s1[i])
+		i++;
+	while (1)
+	{
+		s1[i++] = *s2;
+		if (!*s2++)
+			return (s1);
+	}
 }

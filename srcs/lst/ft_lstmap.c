@@ -6,7 +6,7 @@
 /*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/05 15:38:59 by astadnik          #+#    #+#             */
-/*   Updated: 2017/12/30 13:03:01 by astadnik         ###   ########.fr       */
+/*   Updated: 2018/03/02 18:39:11 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,23 +19,28 @@
 ** returns NULL.
 */
 
-t_list		*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+t_list		*ft_lstmap(t_list *head, t_list *(*func)(t_list *elem))
 {
-	t_list	*rez;
+	t_list	*first;
 	t_list	*temp;
+	t_list	*p;
 
-	rez = NULL;
-	if (!f)
+	p = NULL;
+	first = NULL;
+	if (!func)
 		return (NULL);
-	while (lst)
+	while (head)
 	{
-		if (!(temp = f(lst)))
+		if (!(temp = func(head)))
 		{
-			ft_lstdel(&rez, &free);
+			ft_lstdel(&first, &free);
 			return (NULL);
 		}
-		ft_lstaddb(&rez, temp);
-		lst = lst->next;
+		ft_lstaddb(&p, temp);
+		if (!first)
+			first = p;
+		p = p->next;
+		head = head->next;
 	}
-	return (rez);
+	return (first);
 }

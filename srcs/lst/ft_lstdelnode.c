@@ -6,7 +6,7 @@
 /*   By: astadnik <astadnik@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/23 15:23:50 by astadnik          #+#    #+#             */
-/*   Updated: 2017/12/30 13:03:27 by astadnik         ###   ########.fr       */
+/*   Updated: 2018/03/02 18:36:34 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,16 @@
 
 #include "libft.h"
 
-void		ft_lstdelnode(t_list **head, t_list *targ)
+void		ft_lstdelnode(t_list **head, t_list *node)
 {
-	if (!head || !*head || !targ)
-	{
-		ft_putendl_fd("Hi, i am ft_lstdelnode, and i've got some NULLs", 2);
+	if (!head || !*head || !node)
 		return ;
-	}
-	if (*head == targ)
-	{
-		*head = targ->next;
-		ft_lstdelone(&targ, &free);
-		return ;
-	}
 	while (*head)
 	{
-		if ((*head)->next == targ)
+		if (*head == node)
 		{
-			(*head)->next = targ->next;
-			ft_lstdelone(&targ, &free);
+			*head = (*head)->next;
+			ft_lstdelone(&node, &free);
 			return ;
 		}
 		head = &(*head)->next;

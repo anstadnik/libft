@@ -6,7 +6,7 @@
 /*   By: astadnik <astadnik@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/12/25 18:43:26 by astadnik          #+#    #+#             */
-/*   Updated: 2017/12/25 19:14:44 by astadnik         ###   ########.fr       */
+/*   Updated: 2018/03/02 18:55:48 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,9 @@ void	*ft_realloc(void *ptr, size_t size_src, size_t size)
 {
 	void	*rez;
 
-	if (!(rez = malloc(size)))
-	{
-		ft_putendl_fd("Help... Help... Ft_realloc needs some help", 2);
+	if (!size || !ptr || !(rez = malloc(size)))
 		return (NULL);
-	}
-	if (ptr)
-	{
-		ft_memcpy(rez, ptr, size_src > size - 1 ? size - 1 : size_src);
-		free(ptr);
-	}
+	ft_memcpy(rez, ptr, size_src > size ? size : size_src);
+	free(ptr);
 	return (rez);
 }

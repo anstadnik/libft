@@ -6,7 +6,7 @@
 /*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/29 14:23:47 by astadnik          #+#    #+#             */
-/*   Updated: 2017/11/09 13:14:40 by astadnik         ###   ########.fr       */
+/*   Updated: 2018/03/02 19:12:32 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,10 @@ char					*ft_itoa(int n)
 	char	*rez;
 	size_t	i;
 
-	rez = (char *)malloc(sizeof(char) * (count(n) + 1));
+	i = count(n);
+	rez = (char *)malloc(sizeof(char) * (i + 1));
 	if (!rez)
 		return (NULL);
-	i = count(n);
 	rez[i] = '\0';
 	if (n == 0)
 		rez[--i] = '0';

@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_trunc.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: astadnik <astadnik@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/11/05 15:30:12 by astadnik          #+#    #+#             */
-/*   Updated: 2017/11/09 13:13:33 by astadnik         ###   ########.fr       */
+/*   Created: 2018/03/02 20:17:16 by astadnik          #+#    #+#             */
+/*   Updated: 2018/03/02 20:18:00 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** Adds the element elem at the beginning of the list.
-*/
-
-#include "libft.h"
-
-void	ft_lstadd(t_list **alst, t_list *elem)
+long long	ft_trunc(long double n)
 {
-	if (!alst || !elem)
-		return ;
-	if (*alst)
-		elem->next = *alst;
-	*alst = elem;
+	if (n - (long long)n >= 0.5)
+		return ((long long)n + 1);
+	else
+		return ((long long)n);
 }

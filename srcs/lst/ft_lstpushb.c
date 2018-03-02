@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstaddb.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/10/26 21:58:37 by astadnik          #+#    #+#             */
-/*   Updated: 2017/11/09 13:16:47 by astadnik         ###   ########.fr       */
+/*   Created: 2017/11/07 14:20:09 by astadnik          #+#    #+#             */
+/*   Updated: 2018/03/02 18:40:32 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Locates the first occurrence of c (converted to an unsigned char) in
-** string s.
+** Adds a new element of t_list type at the end of the list.
 */
 
 #include "libft.h"
 
-void	*ft_memchr(const void *str, int c, size_t n)
+void	ft_lstpushb(t_list **head, void *content, size_t content_size)
 {
-	size_t	i;
+	t_list	*new;
 
-	i = 0;
-	while (i < n)
-		if (((unsigned char*)str)[i++] == (unsigned char)c)
-			return ((void *)(str + --i));
-	return (NULL);
+	if (!head || !(new = ft_lstnew(content, content_size)))
+		return ;
+	ft_lstaddb(head, new);
 }
