@@ -6,7 +6,7 @@
 /*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/29 18:35:10 by astadnik          #+#    #+#             */
-/*   Updated: 2018/02/16 15:24:46 by astadnik         ###   ########.fr       */
+/*   Updated: 2018/03/05 14:18:03 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ typedef	struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+int					ft_log(unsigned long long n);
+unsigned long long	ft_pow(unsigned long long n, int p);
 void				*ft_realloc(void *ptr, size_t size_src, size_t size);
 void				ft_lstaddb(t_list **head, t_list *list);
 void				ft_lstadd(t_list **alst, t_list *elem);
