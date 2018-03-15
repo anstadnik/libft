@@ -6,14 +6,13 @@
 /*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/29 18:35:10 by astadnik          #+#    #+#             */
-/*   Updated: 2018/03/15 14:13:46 by astadnik         ###   ########.fr       */
+/*   Updated: 2018/03/15 17:35:31 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <unistd.h>
-# include <inttypes.h>
 # include <stdarg.h>
 # include <wchar.h>
 # include <limits.h>
