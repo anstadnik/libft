@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsrch.c                                       :+:      :+:    :+:   */
+/*   ft_put.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: astadnik <astadnik@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/02 16:49:45 by astadnik          #+#    #+#             */
-/*   Updated: 2018/02/02 17:03:16 by astadnik         ###   ########.fr       */
+/*   Created: 2018/03/15 13:59:09 by astadnik          #+#    #+#             */
+/*   Updated: 2018/03/15 13:59:18 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef FT_PUT_H
+# define FT_PUT_H
 
-/*
-** Searches for a character in the string, and returns it's index if it's
-** founded, or 0 otherwise.
-*/
+void	ft_putchar(char c);
+void	ft_putstr(char const *str);
+void	ft_putendl(char const *str);
+void	ft_putnbr(int n);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char const *str, int fd);
+void	ft_putendl_fd(char const *str, int fd);
+void	ft_putnbr_fd(int n, int fd);
 
-size_t	ft_strsrch(const char *str, char c)
-{
-	size_t	rez;
-
-	if (!str)
-		return (0);
-	rez = 0;
-	while (str[rez])
-		if (str[rez] == c)
-			return (rez);
-		else
-			rez++;
-	return (0);
-}
+#endif
