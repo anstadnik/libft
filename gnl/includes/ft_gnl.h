@@ -6,13 +6,13 @@
 /*   By: astadnik <astadnik@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/15 13:53:26 by astadnik          #+#    #+#             */
-/*   Updated: 2018/03/15 14:08:38 by astadnik         ###   ########.fr       */
+/*   Updated: 2018/03/17 22:25:52 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_GNL_H
 # define FT_GNL_H
-# define BUFF_SIZE 1000
+# define BUFF_SIZE 1
 
 int	get_next_line(const int fd, char **line);
 

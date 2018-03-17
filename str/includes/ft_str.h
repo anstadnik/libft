@@ -6,7 +6,7 @@
 /*   By: astadnik <astadnik@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/15 13:59:23 by astadnik          #+#    #+#             */
-/*   Updated: 2018/03/15 13:59:30 by astadnik         ###   ########.fr       */
+/*   Updated: 2018/03/17 20:59:27 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strtrim(char const *s);
 int		ft_atoi(const char *s);
 char	*ft_itoa(int n);
+int		ft_toupper(int c);
+int		ft_tolower(int c);
 
 #endif
