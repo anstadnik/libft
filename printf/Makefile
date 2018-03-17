@@ -1,11 +1,10 @@
 .PHONY: clean, fclean, re
-
 CC = gcc
 CFLAGS =  -Wall -Wextra -Werror -Wconversion
-ODIR = objs/
+ODIR = ../objs/
 SDIR = srcs/
 IDIR = ../includes/
-NAME = printf.a
+NAME = print
 FILES = ft_printf.c \
 	printf_char.c \
 	printf_fill_list.c \
@@ -25,22 +24,17 @@ FILES = ft_printf.c \
 	printf_memory.c
 OBJS = $(FILES:.c=.o)
 
-all: $(NAME)
-
-$(NAME): $(addprefix $(ODIR), $(OBJS))
-	@ar rc $@ $^
+all: $(addprefix $(ODIR), $(OBJS))
 
 $(addprefix $(ODIR), %.o): $(addprefix $(SDIR), %.c)
 	@printf "."
 	@$(CC) $(CFLAGS) -I$(IDIR) -c -o $@ $<
 
 clean:
-	@echo "\x1b[31mRemoving the object files\x1b[0m"
+	@echo "\x1b[31mRemoving the object files of $(NAME)\x1b[0m"
 	@rm -f $(addprefix $(ODIR), $(OBJS))
 
 fclean: clean
-	@echo "\x1b[31mRemoving the $(NAME)\x1b[0m"
-	@rm -f $(NAME)
 
 re:
 	@$(MAKE) fclean

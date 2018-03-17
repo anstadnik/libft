@@ -1,9 +1,9 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-ODIR = objs/
+ODIR = ../objs/
 SDIR = srcs/
 IDIR = ../includes/
-NAME = is.a
+NAME = is
 FILES = ft_isalnum.c \
 	ft_isalpha.c \
 	ft_isascii.c \
@@ -13,22 +13,17 @@ FILES = ft_isalnum.c \
 	ft_iswhitespace.c
 OBJS = $(FILES:.c=.o)
 
-all: $(NAME)
-
-$(NAME): $(addprefix $(ODIR), $(OBJS))
-	@ar rc $@ $^
+all: $(addprefix $(ODIR), $(OBJS))
 
 $(addprefix $(ODIR), %.o): $(addprefix $(SDIR), %.c)
 	@printf "."
 	@$(CC) $(CFLAGS) -I$(IDIR) -c -o $@ $<
 
 clean:
-	@echo "\x1b[31mRemoving the object files of is.a\x1b[0m"
+	@echo "\x1b[31mRemoving the object files of $(NAME)\x1b[0m"
 	@rm -f $(addprefix $(ODIR), $(OBJS))
 
 fclean: clean
-	@echo "\x1b[31mRemoving the $(NAME)\x1b[0m"
-	@rm -f $(NAME)
 
 re: 
 	@$(MAKE) fclean
