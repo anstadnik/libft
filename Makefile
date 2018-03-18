@@ -6,6 +6,7 @@
 	printf \
 	put \
 	str \
+	math \
 
 NAME = libft.a
 TARGETS = gnl \
@@ -15,6 +16,7 @@ TARGETS = gnl \
 	printf \
 	put \
 	str \
+	math \
 
 OBJS = get_next_line.o ft_isalnum.o ft_isalpha.o ft_isascii.o \
 ft_isdigit.o ft_isprint.o ft_isspace.o ft_iswhitespace.o \
@@ -37,7 +39,7 @@ ft_strlcat.o ft_strlen.o ft_strmap.o ft_strmapi.o \
 ft_strncat.o ft_strncmp.o ft_strncpy.o ft_strnequ.o \
 ft_strnew.o ft_strnstr.o ft_strrchr.o ft_strsplit.o \
 ft_strsrch.o ft_strstr.o ft_strsub.o ft_strtrim.o \
-ft_tolower.o ft_toupper.o \
+ft_tolower.o ft_toupper.o ft_abs.c ft_pow.c \
 
 all: $(NAME)
 

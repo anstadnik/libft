@@ -6,7 +6,7 @@
 /*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/10/29 18:35:10 by astadnik          #+#    #+#             */
-/*   Updated: 2018/03/15 17:35:31 by astadnik         ###   ########.fr       */
+/*   Updated: 2018/03/18 10:36:41 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,6 @@
 # include "../printf/includes/ft_printf.h"
 # include "../put/includes/ft_put.h"
 # include "../str/includes/ft_str.h"
+# include "../math/includes/ft_math.h"
 
 #endif
