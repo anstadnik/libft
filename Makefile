@@ -1,4 +1,4 @@
-.PHONY: clean fclean re \
+.PHONY: clean fclean re g \
 	gnl \
 	is \
 	lst \
@@ -9,6 +9,8 @@
 	math \
 
 NAME = libft.a
+DNAME = dlibft.a
+
 TARGETS = gnl \
 	is \
 	lst \
@@ -51,14 +53,25 @@ $(NAME): $(TARGETS)
 	@echo "\x1b[33m\n\nMaking the libft\x1b[0m"
 	@ar -qc $@ ./objs/*.o
 
+$(DNAME):
+	@echo "\x1b[36mCompiling .o files for libft with g flag\x1b[0m"
+	@for i in ./*/srcs/*; do \
+		printf "."; \
+		gcc -Wall -Wextra -Werror -Iincludes -c -g -o objs/`echo $$i | sed 's/.*\/\(.*\)\.c/\1.o/'` $$i; \
+	done
+	@echo "\x1b[33m\n\nMaking the $(NAME) with g flag\n\x1b[0m"
+	@ar -qc $@ ./objs/*.o
+
+g: $(DNAME)
+
 clean:
 	@for lib_dir in $(TARGETS); do \
 		$(MAKE) -C $$lib_dir clean; \
 	done
 
 fclean: clean
-	@echo "\x1b[31mRemoving the $(NAME)\x1b[0m"
-	@rm -f $(NAME)
+	@echo "\x1b[31mRemoving the $(NAME) and $(DNAME)\x1b[0m"
+	@rm -f $(NAME) $(DNAME)
 
 re: 
 	@$(MAKE) fclean

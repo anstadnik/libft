@@ -1,4 +1,4 @@
-.PHONY: clean, fclean, re
+.PHONY: clean fclean re
 CC = gcc
 CFLAGS =  -Wall -Wextra -Werror -Wconversion
 ODIR = ../objs/
