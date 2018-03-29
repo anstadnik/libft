@@ -6,7 +6,7 @@
 /*   By: astadnik <astadnik@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/29 17:22:41 by astadnik          #+#    #+#             */
-/*   Updated: 2018/03/29 17:45:45 by astadnik         ###   ########.fr       */
+/*   Updated: 2018/03/29 18:15:11 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@ int	ft_isinteger(const char	*s)
 			return (-1);
 		else
 			counter++;
-	if (counter == 10 && (neg ? ft_strncmp(s, "2147483648", 10) : ft_strncmp(s, "2147483647", 10)) > 0)
+	if (!counter || (counter == 10 && (neg ? ft_strncmp(s, "2147483648", 10) :
+					ft_strncmp(s, "2147483647", 10)) > 0))
 		return (-1);
 	return (neg);
 
