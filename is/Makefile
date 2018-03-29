@@ -10,6 +10,7 @@ FILES = ft_isalnum.c \
 	ft_isascii.c \
 	ft_isdigit.c \
 	ft_isprint.c \
+	ft_isinteger.c \
 	ft_isspace.c \
 	ft_iswhitespace.c
 OBJS = $(FILES:.c=.o)
