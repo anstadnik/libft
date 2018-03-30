@@ -6,7 +6,7 @@
 /*   By: astadnik <astadnik@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/02 16:49:45 by astadnik          #+#    #+#             */
-/*   Updated: 2018/03/15 14:42:50 by astadnik         ###   ########.fr       */
+/*   Updated: 2018/03/30 12:56:27 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*
 ** Searches for a character in the string, and returns it's index if it's
-** founded, or 0 otherwise.
+** founded, or -1 otherwise.
 */
 
 ssize_t	ft_strsrch(const char *str, char c)
