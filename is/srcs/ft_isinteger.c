@@ -6,7 +6,7 @@
 /*   By: astadnik <astadnik@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/29 17:22:41 by astadnik          #+#    #+#             */
-/*   Updated: 2018/03/31 18:15:09 by astadnik         ###   ########.fr       */
+/*   Updated: 2018/03/31 21:35:27 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	count(const char *s)
 	return (counter);
 }
 
-int	ft_isinteger(const char	*s)
+int			ft_isinteger(const char *s)
 {
 	char	neg;
 	int		zero;
@@ -45,5 +45,4 @@ int	ft_isinteger(const char	*s)
 				> 0 && (counter == 10)) || (!counter && !zero))
 		return (-1);
 	return (neg);
-
 }
