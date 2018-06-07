@@ -11,6 +11,12 @@
 NAME = libft.a
 DNAME = dlibft.a
 
+ifeq ($(shell uname), Linux)
+	ESCAPE := \033
+else
+	ESCAPE := $(ESCAPE)
+endif
+
 TARGETS = gnl \
 	is \
 	lst \
@@ -46,33 +52,33 @@ OBJS = get_next_line.o ft_isalnum.o ft_isalpha.o ft_isascii.o \
 all: $(NAME)
 
 $(TARGETS):
-	@echo "\x1b[36m\nCompiling $@\x1b[0m"
-	@$(MAKE) -C $@
-	
+	@echo "$(ESCAPE)[36m\nCompiling $@$(ESCAPE)[0m"
+	@$(MAKE) --no-print-directory -C $@
+
 $(NAME): $(TARGETS)
-	@echo "\x1b[33m\n\nMaking the libft\x1b[0m"
+	@echo "$(ESCAPE)[33m\n\nMaking the libft$(ESCAPE)[0m"
 	@ar -qc $@ ./objs/*.o
 
 $(DNAME):
-	@echo "\x1b[36mCompiling .o files for libft with g flag\x1b[0m"
+	@echo "$(ESCAPE)[36mCompiling .o files for libft with g flag$(ESCAPE)[0m"
 	@for i in ./*/srcs/*; do \
 		printf "."; \
 		gcc -Wall -Wextra -Werror -Iincludes -c -g -o objs/`echo $$i | sed 's/.*\/\(.*\)\.c/\1.o/'` $$i; \
 	done
-	@echo "\x1b[33m\n\nMaking the $(NAME) with g flag\n\x1b[0m"
+	@echo "$(ESCAPE)[33m\n\nMaking the $(NAME) with g flag\n$(ESCAPE)[0m"
 	@ar -qc $@ ./objs/*.o
 
 g: $(DNAME)
 
 clean:
 	@for lib_dir in $(TARGETS); do \
-		$(MAKE) -C $$lib_dir clean; \
+		$(MAKE) --no-print-directory -C $$lib_dir clean; \
 	done
 
 fclean: clean
-	@echo "\x1b[31mRemoving the $(NAME) and $(DNAME)\x1b[0m"
+	@echo "$(ESCAPE)[31mRemoving the $(NAME) and $(DNAME)$(ESCAPE)[0m"
 	@rm -f $(NAME) $(DNAME)
 
-re: 
+re:
 	@$(MAKE) fclean
-	@$(MAKE) 
+	@$(MAKE)

@@ -18,6 +18,7 @@
 # include <limits.h>
 # include <time.h>
 # include <stdlib.h>
+# include <inttypes.h>
 # include "../gnl/includes/ft_gnl.h"
 # include "../is/includes/ft_is.h"
 # include "../lst/includes/ft_lst.h"
