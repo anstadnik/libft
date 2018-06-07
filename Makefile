@@ -13,8 +13,10 @@ DNAME = dlibft.a
 
 ifeq ($(shell uname), Linux)
 	ESCAPE := \033
+	CC = clang
 else
-	ESCAPE := $(ESCAPE)
+	ESCAPE := \x1b
+	CC = gcc
 endif
 
 TARGETS = gnl \
@@ -80,5 +82,5 @@ fclean: clean
 	@rm -f $(NAME) $(DNAME)
 
 re:
-	@$(MAKE) fclean
-	@$(MAKE)
+	@$(MAKE) --no-print-directory fclean
+	@$(MAKE) --no-print-directory 

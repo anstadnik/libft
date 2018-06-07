@@ -55,8 +55,8 @@ static void	put_stuff(char **str, intmax_t *len, char *s)
 	while ((i /= 10) && *len > 0)
 	{
 		(*len)--;
-		*(*str)++ = n / i + '0';
-		n %= i;
+		*(*str)++ = (char)(n / i + '0');
+		n = n % (char)i;
 	}
 }
 

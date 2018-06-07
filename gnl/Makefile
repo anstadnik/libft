@@ -1,18 +1,19 @@
 .PHONY: clean fclean re
-CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 ODIR = ../objs/
 SDIR = srcs/
 IDIR = ../includes/
 NAME = gnl
 FILES = get_next_line.c
+OBJS = $(FILES:.c=.o)
 
 ifeq ($(shell uname), Linux)
 	ESCAPE := \033
+	CC = clang
 else
 	ESCAPE := \x1b
+	CC = gcc
 endif
-OBJS = $(FILES:.c=.o)
 
 all: $(addprefix $(ODIR), $(OBJS))
 
@@ -27,5 +28,5 @@ clean:
 fclean: clean
 
 re: 
-	@$(MAKE) fclean
-	@$(MAKE) 
+	@$(MAKE) --no-print-directory fclean
+	@$(MAKE) --no-print-directory 

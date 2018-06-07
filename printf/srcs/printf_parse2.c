@@ -20,9 +20,9 @@ static void	parse_num(const char *str, size_t *i, t_printf_flags *flags)
 	while (ft_isdigit(str[*i]))
 		(*i)++;
 	if (str[*i] == '!' && (*i)++)
-		flags->system = tmp > 16 ? 10 : (unsigned char)tmp;
+		flags->system = (unsigned char)(tmp > 16 ? 10 : (unsigned char)tmp);
 	else if (str[*i] == '?' && (*i)++)
-		flags->base = tmp < 0 ? 0 : tmp % 25;
+		flags->base = (char)(tmp < 0 ? 0 : tmp % 25);
 	else if (str[*i] == '$' && (*i)++)
 		flags->doll = (size_t)tmp;
 	else
