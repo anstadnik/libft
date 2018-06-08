@@ -6,7 +6,7 @@
 /*   By: astadnik <astadnik@student.unit.ua>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/06 15:35:42 by astadnik          #+#    #+#             */
-/*   Updated: 2018/03/15 14:13:03 by astadnik         ###   ########.fr       */
+/*   Updated: 2018/06/08 23:53:18 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,7 +144,7 @@ char				printf_flags_hand(t_list *lst, t_printf_par *params,
 	t_printf_par	par;
 	char			*str;
 
-	ft_bzero(sizes, sizeof(intmax_t) * 7);
+	ft_bzero(sizes, sizeof(intmax_t) * 6);
 	flag = *(t_printf_flags *)lst->content;
 	free(lst->content);
 	if (flag.err == -1)
