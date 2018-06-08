@@ -65,7 +65,7 @@ $(DNAME):
 	@echo "$(ESCAPE)[36mCompiling .o files for libft with g flag$(ESCAPE)[0m"
 	@for i in ./*/srcs/*; do \
 		printf "."; \
-		gcc -Wall -Wextra -Werror -Iincludes -c -g -o objs/`echo $$i | sed 's/.*\/\(.*\)\.c/\1.o/'` $$i; \
+		$(CC) -Wall -Wextra -Werror -Iincludes -c -g -o objs/`echo $$i | sed 's/.*\/\(.*\)\.c/\1.o/'` $$i; \
 	done
 	@echo "$(ESCAPE)[33m\n\nMaking the $(NAME) with g flag\n$(ESCAPE)[0m"
 	@ar -qc $@ ./objs/*.o
