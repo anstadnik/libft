@@ -28,8 +28,8 @@ endif
 all: $(addprefix $(ODIR), $(OBJS))
 
 $(addprefix $(ODIR), %.o): $(addprefix $(SDIR), %.c)
-	@printf "."
 	@$(CC) $(CFLAGS) -I$(IDIR) -c -o $@ $<
+	@printf "."
 
 clean:
 	@echo "$(ESCAPE)[31mRemoving the object files of $(NAME)$(ESCAPE)[0m"
