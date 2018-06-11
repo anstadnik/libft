@@ -34,5 +34,6 @@ void				ft_lstpushf(t_list **alst, void *content,
 		size_t content_size);
 void				ft_lstdelnode(t_list **head, t_list *targ);
 char				*ft_lsttostr(t_list *head);
+ssize_t	            str_from_lsts(t_list *tmp, char **line);
 
 #endif
