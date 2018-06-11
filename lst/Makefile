@@ -14,7 +14,8 @@ FILES = ft_lstadd.c \
 	ft_lstnew.c \
 	ft_lstpushb.c \
 	ft_lstpushf.c \
-	ft_lsttostr.c
+	ft_lsttostr.c \
+    str_from_lsts.c
 OBJS = $(FILES:.c=.o)
 
 ifeq ($(shell uname), Linux)
