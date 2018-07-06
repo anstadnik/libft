@@ -6,7 +6,7 @@
 /*   By: astadnik <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/11/05 13:58:03 by astadnik          #+#    #+#             */
-/*   Updated: 2017/11/09 13:13:44 by astadnik         ###   ########.fr       */
+/*   Updated: 2018/07/06 18:12:10 by astadnik         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 {
 	t_list	*rez;
 
-	rez = malloc(sizeof(t_list));
-	if (!rez || (!content_size && content))
+	if ((!content_size && content) || !(rez = malloc(sizeof(t_list))))
 		return (NULL);
 	if (content)
 	{
