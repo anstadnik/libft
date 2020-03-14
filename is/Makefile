@@ -29,7 +29,7 @@ $(addprefix $(ODIR), %.o): $(addprefix $(SDIR), %.c)
 	@printf "."
 
 clean:
-	@echo "$(ESCAPE)[31mRemoving the object files of $(NAME)$(ESCAPE)[0m"
+	@echo -e "$(ESCAPE)[31mRemoving the object files of $(NAME)$(ESCAPE)[0m"
 	@rm -f $(addprefix $(ODIR), $(OBJS))
 
 fclean: clean

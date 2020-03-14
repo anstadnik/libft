@@ -54,20 +54,20 @@ OBJS = get_next_line.o ft_isalnum.o ft_isalpha.o ft_isascii.o \
 all: $(NAME)
 
 $(TARGETS):
-	@echo "$(ESCAPE)[36m\nCompiling $@$(ESCAPE)[0m"
+	@echo -e "$(ESCAPE)[36m\nCompiling $@$(ESCAPE)[0m"
 	@$(MAKE) --no-print-directory -C $@
 
 $(NAME): $(TARGETS)
-	@echo "$(ESCAPE)[33m\n\nMaking the libft$(ESCAPE)[0m"
+	@echo -e "$(ESCAPE)[33m\n\nMaking the libft$(ESCAPE)[0m"
 	@ar -qc $@ ./objs/*.o
 
 $(DNAME):
-	@echo "$(ESCAPE)[36mCompiling .o files for libft with g flag$(ESCAPE)[0m"
+	@echo -e "$(ESCAPE)[36mCompiling .o files for libft with g flag$(ESCAPE)[0m"
 	@for i in ./*/srcs/*; do \
-		$(CC) -Wall -Wextra -Werror -Iincludes -c -g -o objs/`echo $$i | sed 's/.*\/\(.*\)\.c/\1.o/'` $$i; \
+		$(CC) -Wall -Wextra -Werror -Iincludes -c -g -o objs/`echo -e $$i | sed 's/.*\/\(.*\)\.c/\1.o/'` $$i; \
 		printf "."; \
 	done
-	@echo "$(ESCAPE)[33m\n\nMaking the $(NAME) with g flag\n$(ESCAPE)[0m"
+	@echo -e "$(ESCAPE)[33m\n\nMaking the $(NAME) with g flag\n$(ESCAPE)[0m"
 	@ar -qc $@ ./objs/*.o
 
 g: $(DNAME)
@@ -78,7 +78,7 @@ clean:
 	done
 
 fclean: clean
-	@echo "$(ESCAPE)[31mRemoving the $(NAME) and $(DNAME)$(ESCAPE)[0m"
+	@echo -e "$(ESCAPE)[31mRemoving the $(NAME) and $(DNAME)$(ESCAPE)[0m"
 	@rm -f $(NAME) $(DNAME)
 
 re:
