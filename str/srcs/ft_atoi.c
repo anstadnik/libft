@@ -35,7 +35,7 @@ int	ft_atoi(const char *s)
 	{
 		rez = rez * 10 + (unsigned long long)(*s++ - '0');
 		if (rez > 2147483647 || (rez > 2147483648 && neg))
-			return (neg ? 2147483647 : -2147483648);
+			return (neg ? -2147483648 : 2147483647);
 	}
 	return (neg ? -1 * (int)rez : (int)rez);
 }
