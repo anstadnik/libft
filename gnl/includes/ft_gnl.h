@@ -12,7 +12,8 @@
 
 #ifndef FT_GNL_H
 # define FT_GNL_H
-# define BUFF_SIZE 100
+// # define BUFF_SIZE 100
+# define BUFF_SIZE 1
 
 int	get_next_line(const int fd, char **line);
 
