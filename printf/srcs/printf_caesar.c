@@ -24,7 +24,7 @@ void		printf_caesar_write(char *str, t_printf_par par, intmax_t len,
 {
 	while (len--)
 	{
-		*str = *(unsigned char *)par.p++ + flag.base;
+		*str = (char)(*(unsigned char *)par.p++ + flag.base);
 		if ((*str > 'Z' && *str < 'a') || *(unsigned char *)str > 'z')
 			*str -= 26;
 		str++;
